@@ -10,8 +10,9 @@ export default function Header() {
 
   return (
     <header className={`
-      header ${isScrolled &&'bg-black'}
-      fixed top-0 z-50 flex w-full items-center justify-between transition-all px-4 py-4 lg:px-10 lg:py-6`
+      ${isScrolled &&'bg-black'}
+      fixed top-0 z-50 
+      flex w-full items-center justify-between transition-all p-2 px-4 lg:px-16 lg:py-4`
     }>
       <div className='flex items-center space-x-2 md:space-x-4'>
         <Logo />

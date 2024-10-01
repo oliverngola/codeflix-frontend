@@ -10,9 +10,11 @@
     "test": "jest --watch"
   },
   "dependencies": {
+    "@heroicons/react": "^2.1.5",
     "next": "^13.5.7",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "tailwind-scrollbar-hide": "^1.1.7"
   },
   "devDependencies": {
     "@testing-library/dom": "^10.4.0",
