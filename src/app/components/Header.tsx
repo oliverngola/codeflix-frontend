@@ -5,7 +5,7 @@ import { Logo } from './Logo'
 import { NavLInks } from './NavLinks'
 import { useScroll } from '../hooks/useScroll'
 
-export default function Header() {
+export const Header = () => {
   const isScrolled = useScroll()
 
   return (
