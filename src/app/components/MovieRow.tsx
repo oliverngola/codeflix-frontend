@@ -1,34 +1,27 @@
 import React from 'react'
-import Image from 'next/image'
+import { Movies } from '../types/movie'
+import { MovieCard } from './MovieCard'
 
 type MovieRowProps = {
   sectionTitle: string,
+  movies: Movies
 }
 
-type MovieCardProps = {
-  index: number,
-}
-
-const MovieCard = ({index}: MovieCardProps) => (
-  <div className='group relative h-28 min-w-[200px] cursor-pointer rounded bg-gradient-to-t from-transparent to-black transition-transform duration-200 ease-out hover:opacity-100 md:h-36 md:min-w-[260px] md:hover:scale-110'>
-    <Image
-      src={`/item_${index}.png`}
-      fill={true}
-      alt='MAD'
-      className='rounded'
-    />
-  </div>
-);
-
-export const MovieRow = ({sectionTitle}: MovieRowProps) => (
+export const MovieRow = ({sectionTitle, movies}: MovieRowProps) => (
   <div className='flex-col space-y-4'>
     <div className='flex'>
-      <h2 className="-ml-2 inline-flex items-center text-2xl font-bold">{sectionTitle}</h2>
+      <h2 className="-ml-2 inline-flex items-center text-2xl font-bold">
+        {sectionTitle}
+      </h2>
     </div>
-    <div className='-ml-8 flex space-x-4 p-6 overflow-x-scroll scrollbar-hide'>
-        {[1, 2, 3, 4, 5].map((index) => (
-          <MovieCard key={index}  index={index}/>
-        ))}
+
+    <div className='grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-8'>
+      {movies.map((movie, index) => (
+        <MovieCard 
+          key={movie.id} 
+          movie={movie} 
+        />
+      ))}
     </div>
   </div>
 )
