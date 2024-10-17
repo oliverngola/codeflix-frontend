@@ -2,10 +2,11 @@
 import React, { useState } from 'react'
 import { UserProfile } from './UserProfile'
 import { Logo } from './Logo'
-import { NavLInks } from './NavLinks'
+import { NavLinks } from './NavLinks'
 import { useScroll } from '../hooks/useScroll'
 import { SearchForm } from './SearchForm'
 import { useRouter, useSearchParams } from 'next/navigation'
+import Link from 'next/link'
 
 export const Header = () => {
   const isScrolled = useScroll()
@@ -32,8 +33,10 @@ export const Header = () => {
       flex w-full items-center justify-between transition-all p-2 px-4 lg:px-16 lg:py-4`
     }>
       <div className='flex items-center space-x-2 md:space-x-4'>
-        <Logo />
-        <NavLInks />
+        <Link href='/' passHref>
+          <Logo />
+        </Link>
+        <NavLinks />
       </div>
       <div className='flex items-center space-x-2 md:space-x-4'>
         <SearchForm 
